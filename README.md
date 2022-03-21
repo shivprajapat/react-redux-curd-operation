@@ -18,7 +18,7 @@ Below are the list of commands. To download the dependencies, clone the repo and
 
 - Execute `npm run serve`
 
-Now if you go to <http://localhost:4000/food>, you'll get
+Now if you go to <http://localhost:5000/food>, you'll get
 
 #### project use package
 
