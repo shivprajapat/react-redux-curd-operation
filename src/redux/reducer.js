@@ -1,7 +1,8 @@
 import { actionType } from "./actionType";
 
 const initialState = {
-    users: []
+    users: [],
+    user: {}
 }
 
 const usersReducer = (state = initialState, action) => {

@@ -3,7 +3,14 @@
     {
       "name": "Dish",
       "price": "10",
-      "addons": "Extra Sauce"
+      "addons": "Extra Sauce",
+      "id": 1
+    },
+    {
+      "name": "Mobile Development",
+      "price": "20",
+      "addons": "Extra Sauce, Yogurt, Cheese",
+      "id": 2
     }
   ]
 }
