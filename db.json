@@ -1,16 +1,34 @@
 {
   "food": [
     {
-      "name": "Dish",
-      "price": "10",
+      "name": "Plain paratha + Yogurt",
+      "price": "40",
       "addons": "Extra Sauce",
-      "id": 1
+      "id": 2
     },
     {
-      "name": "Mobile Development",
-      "price": "20",
+      "name": "Aalo Paratha",
+      "price": "50",
       "addons": "Extra Sauce, Yogurt, Cheese",
-      "id": 2
+      "id": 3
+    },
+    {
+      "name": "Veg Paratha",
+      "price": "50",
+      "addons": "Corn, Cabbage, Fenugreek, Cheese",
+      "id": 4
+    },
+    {
+      "name": "Double Cheese Paratha",
+      "price": "70",
+      "addons": "Extra Sauce, Yogurt, Corn",
+      "id": 5
+    },
+    {
+      "name": "Corn Cheese Paratha",
+      "price": "80",
+      "addons": "Extra Sauce, Yogurt, Cheese",
+      "id": 6
     }
   ]
 }

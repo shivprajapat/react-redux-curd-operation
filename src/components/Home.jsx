@@ -10,8 +10,9 @@ import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useDispatch, useSelector } from 'react-redux'
-import { loadFoods } from '../redux/actions'
+import { loadFoods, deleteFood } from '../redux/actions'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -42,8 +43,11 @@ export default function Home() {
     useEffect(() => {
         dispatch(loadFoods())
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
-
+    const handChange = (id) => {
+        if (window.confirm("Are you sure")) {
+            dispatch(deleteFood(id))
+        }
+    }
     return (
         <div className='add-user'>
             <Box sx={{ paddingBottom: 2, display: 'flex', justifyContent: 'flex-end' }}>
@@ -63,13 +67,13 @@ export default function Home() {
                     </TableHead>
                     <TableBody>
                         {users.data && users.data.map((item, index) => {
-                            const { name, price, addons } = item;
+                            const { id, name, price, addons } = item;
                             return (
                                 <StyledTableRow key={index}>
                                     <StyledTableCell component="th" scope="row">{index + 1}</StyledTableCell>
                                     <StyledTableCell>{name}</StyledTableCell>
                                     <StyledTableCell>{price}</StyledTableCell>
-                                    <StyledTableCell>{addons}</StyledTableCell>
+                                    <StyledTableCell sx={{ display: 'flex', alignItems: "center", justifyContent: 'space-between' }}>{addons} <Button variant="contained" color='error' onClick={() => handChange(id)}><DeleteOutlineIcon /></Button></StyledTableCell>
                                 </StyledTableRow>
                             )
                         })}
