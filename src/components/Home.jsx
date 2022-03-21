@@ -33,14 +33,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-    createData('Plain paratha +Yogurt', 40, "Extra Sauce")
-];
-
 export default function Home() {
     let dispatch = useDispatch();
 
@@ -63,21 +55,24 @@ export default function Home() {
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
+                            <StyledTableCell>ID</StyledTableCell>
                             <StyledTableCell>Dish</StyledTableCell>
                             <StyledTableCell>Price</StyledTableCell>
                             <StyledTableCell style={{ width: 360 }} >Available Addons</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.name}
-                                </StyledTableCell>
-                                <StyledTableCell>{row.calories}</StyledTableCell>
-                                <StyledTableCell>{row.fat}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
+                        {users.data && users.data.map((item, index) => {
+                            const { name, price, addons } = item;
+                            return (
+                                <StyledTableRow key={index}>
+                                    <StyledTableCell component="th" scope="row">{index + 1}</StyledTableCell>
+                                    <StyledTableCell>{name}</StyledTableCell>
+                                    <StyledTableCell>{price}</StyledTableCell>
+                                    <StyledTableCell>{addons}</StyledTableCell>
+                                </StyledTableRow>
+                            )
+                        })}
                     </TableBody>
                 </Table>
             </TableContainer>

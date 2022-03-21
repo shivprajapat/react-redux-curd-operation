@@ -2,7 +2,7 @@
   "food": [
     {
       "name": "Dish",
-      "Price": "10",
+      "price": "10",
       "addons": "Extra Sauce"
     }
   ]
