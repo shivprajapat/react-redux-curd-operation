@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { useDispatch, useSelector } from 'react-redux'
+import { loadFoods } from '../redux/actions'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -40,6 +42,15 @@ const rows = [
 ];
 
 export default function Home() {
+    let dispatch = useDispatch();
+
+    const { users } = useSelector(state => state.data);
+
+    console.log(users);
+    useEffect(() => {
+        dispatch(loadFoods())
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
 
     return (
         <div className='add-user'>

@@ -6,7 +6,7 @@ const getFoods = (users) => ({
     payload: users
 });
 
-export const loadUsers = () => {
+export const loadFoods = () => {
     return function (dispatch) {
         axios.get("http://localhost:5000/food").then((resp) => {
             console.log(resp);
