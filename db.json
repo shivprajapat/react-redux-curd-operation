@@ -1,22 +1,10 @@
 {
   "food": [
     {
-      "name": "Plain paratha + Yogurt",
-      "price": "40",
-      "addons": "Extra Sauce",
-      "id": 2
-    },
-    {
       "name": "Aalo Paratha",
       "price": "50",
       "addons": "Extra Sauce, Yogurt, Cheese",
       "id": 3
-    },
-    {
-      "name": "Veg Paratha",
-      "price": "50",
-      "addons": "Corn, Cabbage, Fenugreek, Cheese",
-      "id": 4
     },
     {
       "name": "Double Cheese Paratha",
